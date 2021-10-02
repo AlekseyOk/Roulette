@@ -9,3 +9,28 @@
 .SVG {
     border: 1px solid black;
 }
+
+.squereCell {
+    fill: skyblue;
+    cursor:pointer;
+    stroke: steelblue;
+    stroke-Width: 1;
+}
+
+.squereCell:hover {
+    fill: red;
+    opacity: 50%
+}
+
+.squareCellText {
+    pointer-events: none;
+    cursor: none;
+    font-size: 15px;
+    font-weight: bold;
+    stroke-width: 0.5;
+    padding-top: 50px
+}
+.squareCellText:hover {
+    pointer-events: none;
+    cursor: none;
+}
