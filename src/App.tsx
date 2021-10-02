@@ -17,9 +17,9 @@ function addCoordinatesOfFirstSquareCell(): void {
   currentCoordinatesOfSquareCell = coordinatesOfFirstSquareCell
   currentNumberOfRows++
 }
-addCoordinatesOfFirstSquareCell()
 
 function generateSquareCellsCoordinates(): void {
+  addCoordinatesOfFirstSquareCell()
   for (let i = 1; i < numberOfSquareCells; i++) {
     if (currentNumberOfRows < numberOfRows) {
       let coordinatesOfNextCell = [currentCoordinatesOfSquareCell[0], currentCoordinatesOfSquareCell[1] - oneCellWidth]
@@ -35,28 +35,14 @@ function generateSquareCellsCoordinates(): void {
 }
 generateSquareCellsCoordinates()
 
-function App() {
-  return (
-    <div className="App">
-      <div className="Greed">
-        <SquareСells/>
-      </div>
-    </div>
-  );
-}
-
-export default App
-
-let SquareСells = () => {
+let SquareСellsGreed = () => {
   return (
     <div>
-      <svg className="SVG" width="600" height="150">
+      <svg className="squareСellsGreed">
         {coordinatesOfSquareCells.map((squareCell, index) => {
           let [coordX, coordY] = squareCell
           return <g>
-            <rect x={coordX} y={coordY} key={index} width="50" height="50"
-              className="squereCell"
-            ></rect>
+            <rect className="squereCell" x={coordX} y={coordY} key={index}></rect>
             <text className="squareCellText" x={coordX + 18} y={coordY + 30}>{++index}</text>
           </g>
         })}
@@ -64,3 +50,15 @@ let SquareСells = () => {
     </div>
   )
 }
+
+function App() {
+  return (
+    <div className="App">
+      <div className="bettingGreed">
+        <SquareСellsGreed />
+      </div>
+    </div>
+  );
+}
+
+export default App
