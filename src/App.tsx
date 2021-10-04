@@ -21,14 +21,15 @@ function addCoordinatesOfFirstSquareCell(): void {
 function generateSquareCellsCoordinates(): void {
   addCoordinatesOfFirstSquareCell()
   for (let i = 1; i < numberOfSquareCells; i++) {
+    let [currentCoordinateX, currentCoordinateY] = currentCoordinatesOfSquareCell
     if (currentNumberOfRows < numberOfRows) {
-      let coordinatesOfNextCell = [currentCoordinatesOfSquareCell[0], currentCoordinatesOfSquareCell[1] - oneCellWidth]
+      let coordinatesOfNextCell = [currentCoordinateX, currentCoordinateY - oneCellWidth]
       coordinatesOfSquareCells.push(coordinatesOfNextCell)
       currentCoordinatesOfSquareCell = coordinatesOfNextCell
       currentNumberOfRows++
     }
     if (currentNumberOfRows >= numberOfRows) {
-      currentCoordinatesOfSquareCell = [currentCoordinatesOfSquareCell[0] + oneCellWidth, greedHeight]
+      currentCoordinatesOfSquareCell = [currentCoordinateX + oneCellWidth, greedHeight]
       currentNumberOfRows = 0
     }
   }
@@ -39,8 +40,8 @@ let SquareСellsGreed = () => {
   return (
     <div>
       <svg className="squareСellsGreed">
-        {coordinatesOfSquareCells.map((squareCell, index) => {
-          let [coordX, coordY] = squareCell
+        {coordinatesOfSquareCells.map((squareCellCoordinates, index) => {
+          let [coordX, coordY] = squareCellCoordinates
           return <g>
             <rect className="squereCell" x={coordX} y={coordY} key={index}></rect>
             <text className="squareCellText" x={coordX + 18} y={coordY + 30}>{++index}</text>
