@@ -43,11 +43,7 @@ let SquareСellsGreed = () => {
         {coordinatesOfSquareCells.map((squareCellCoordinates, index) => {
           let [coordX, coordY] = squareCellCoordinates
           let colorOfsquereCell:string = ''
-          if (index % 2 === 0) {
-            colorOfsquereCell = 'redSquereCell'
-          } else {
-            colorOfsquereCell = 'blackSquereCell'
-          }
+          index % 2 === 0 ? colorOfsquereCell = 'redSquereCell' : colorOfsquereCell = 'blackSquereCell'
           return <g>
             <rect className={colorOfsquereCell} x={coordX} y={coordY} key={index}></rect>
             <text className="squareCellText" x={coordX + 18} y={coordY + 30}>{++index}</text>
