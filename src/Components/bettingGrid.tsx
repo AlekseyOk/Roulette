@@ -9,7 +9,8 @@ let BettingGrid = () => {
                 {coordinatesOfSquareCells.map((squareCellCoordinates: Array<number>, index: number) => {
                     let [coordX, coordY] = squareCellCoordinates
                     let colorOfsquereCell: string = ''
-                    index % 2 === 0 ? colorOfsquereCell = 'redSquereCell' : colorOfsquereCell = 'blackSquereCell'
+                    let redSquareCeels = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36].map(el=>el-1)
+                    redSquareCeels.includes(index) ? colorOfsquereCell = 'redSquereCell' : colorOfsquereCell = 'blackSquereCell'
                     return <g>
                         <g>
                             <rect className={colorOfsquereCell} x={coordX} y={coordY} key={index}></rect>
