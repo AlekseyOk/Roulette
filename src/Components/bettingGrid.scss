@@ -1,8 +1,8 @@
  
-.squareСellsGrid {
+.BettingGrid {
     border: 1px solid black;
     width: 600px;
-    height: 150px;
+    height: 200px;
 }
 
 .redSquereCell {
@@ -39,4 +39,26 @@
 .squareCellText:hover {
     pointer-events: none;
     cursor: none;
+}
+
+.dozenCell {
+    fill: black;
+    stroke: yellow;
+    cursor:pointer;
+    stroke-Width: 1;
+    width: 200px;
+    height: 50px;
+}
+
+.dozenCell:hover{
+    fill: steelblue;
+    opacity: 90%
+}
+
+.dozenCellText {
+    fill:white;
+    pointer-events: none;
+    cursor: none;
+    font-size: 15px;
+    padding-top: 50px
 }

@@ -3,8 +3,8 @@ let greedHeight: number = 150
 let numberOfSquareCells: number = 36
 let numberOfRows: number = 3
 let coordinatesOfSquareCells: Array<coordinatesOfSquareCell> = []
-type coordinatesOfSquareCell = Array<number>
 let coordinatesOfFirstSquareCell: Array<number> = [0, 100];
+type coordinatesOfSquareCell = Array<number>
 let oneCellWidth: number = greedWidth / 12
 let currentCoordinatesOfSquareCell: Array<number> = coordinatesOfFirstSquareCell
 let currentNumberOfRows: number = 0;
@@ -33,14 +33,5 @@ function generateSquareCellsCoordinates(): void {
 }
 
 generateSquareCellsCoordinates()
-
-// function generateDozensCellsCoordinates(): void {
-
-// }
-
-
-// let dozensСells = () => {
-
-// }
 
 export default coordinatesOfSquareCells
