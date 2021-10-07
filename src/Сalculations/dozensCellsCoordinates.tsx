@@ -1,10 +1,8 @@
-let greedHeight: number = 150
+import {greedHeight, numberOfDozensCells, oneCellWidth} from '../variables'
+
 let coordinatesOfDozensCells: Array<coordinatesOfDozensCell> = []
 type coordinatesOfDozensCell = Array<number>
-let numberOfDozensCells: number = 3
 let coordinatesOfFirstDozenCell: Array<number> = [0, greedHeight]
-let greedWidth: number = 600
-let oneCellWidth: number = greedWidth / 12
 
 function generateDozensCellsCoordinates(): void {
   coordinatesOfDozensCells.push(coordinatesOfFirstDozenCell)

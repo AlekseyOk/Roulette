@@ -1,11 +1,7 @@
-let greedWidth: number = 600
-let greedHeight: number = 150
-let numberOfSquareCells: number = 36
-let numberOfRows: number = 3
-let coordinatesOfSquareCells: Array<coordinatesOfSquareCell> = []
-let coordinatesOfFirstSquareCell: Array<number> = [0, 100];
+import {greedHeight, numberOfSquareCells, numberOfRows, coordinatesOfFirstSquareCell, oneCellWidth} from '../variables'
+
+const coordinatesOfSquareCells: Array<coordinatesOfSquareCell> = []
 type coordinatesOfSquareCell = Array<number>
-let oneCellWidth: number = greedWidth / 12
 let currentCoordinatesOfSquareCell: Array<number> = coordinatesOfFirstSquareCell
 let currentNumberOfRows: number = 0;
 
