@@ -1,4 +1,4 @@
-import {greedHeight, numberOfSquareCells, numberOfRows, coordinatesOfFirstSquareCell, oneCellWidth} from '../variables'
+import { greedHeight, numberOfSquareCells, numberOfRows, coordinatesOfFirstSquareCell, oneCellWidth } from '../variables'
 
 const coordinatesOfSquareCells: Array<coordinatesOfSquareCell> = []
 type coordinatesOfSquareCell = Array<number>

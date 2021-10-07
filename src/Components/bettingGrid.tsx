@@ -2,7 +2,7 @@ import React from 'react';
 import coordinatesOfSquareCells from '../Сalculations/squereCellsCoordinates'
 import coordinatesOfDozensCells from '../Сalculations/dozensCellsCoordinates'
 import './bettingGrid.scss';
-import {redSquareCeels, dozensText} from '../variables'
+import { redSquareCeels, dozensText } from '../variables'
 
 let BettingGrid = () => {
     return (

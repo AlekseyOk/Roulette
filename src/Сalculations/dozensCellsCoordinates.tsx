@@ -1,4 +1,4 @@
-import {greedHeight, numberOfDozensCells, oneCellWidth} from '../variables'
+import { greedHeight, numberOfDozensCells, oneCellWidth } from '../variables'
 
 let coordinatesOfDozensCells: Array<coordinatesOfDozensCell> = []
 type coordinatesOfDozensCell = Array<number>
