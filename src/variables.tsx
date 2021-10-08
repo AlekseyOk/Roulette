@@ -9,3 +9,4 @@ export let redSquareCeels: Array<number> = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 2
 export let dozensText: Array<string> = ['1st 12', '2nd 12', '3nd 12']
 export let bottomCellsText: Array<string> = ['1 to 18', 'EVEN', '', '', 'ODD', '19 to 36']
 export let numberOfBottomCells: number = 6
+export let bottomCellWidth = greedWidth / numberOfBottomCells

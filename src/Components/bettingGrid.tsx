@@ -3,7 +3,7 @@ import coordinatesOfSquareCells from '../Сalculations/squereCellsCoordinates'
 import coordinatesOfDozensCells from '../Сalculations/dozensCellsCoordinates'
 import coordinatesOfBottomCells from '../Сalculations/bottomСellsCoordinates'
 import './bettingGrid.scss';
-import { redSquareCeels, dozensText, bottomCellsText } from '../variables'
+import { redSquareCeels, dozensText, bottomCellsText, bottomCellWidth } from '../variables'
 
 let BettingGrid = () => {
     return (
@@ -33,7 +33,7 @@ let BettingGrid = () => {
                     let [coordX, coordY] = bottomCellCoordinates
                     return <g key={index}>
                         <g>
-                            <rect className={`bottomCell${index} bottomCell`} x={coordX} y={coordY}></rect>
+                            <rect className={`bottomCell${index} bottomCell`} width={bottomCellWidth} x={coordX} y={coordY}></rect>
                             <text className="bottomCellText" x={coordX + 27} y={coordY + 18}>{bottomCellsText[index]}</text>
                         </g>
                     </g>
