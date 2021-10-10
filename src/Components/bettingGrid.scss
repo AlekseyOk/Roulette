@@ -33,6 +33,7 @@
     font-weight: bold;
     stroke-width: 0.5;
     padding-top: 50px;
+    text-anchor:middle;
 }
 .squareCellText:hover {
     pointer-events: none;
@@ -74,6 +75,7 @@
     cursor: none;
     font-size: 15px;
     padding-top: 50px;
+    text-anchor:middle;
 }
 
 .bottomCell2 {

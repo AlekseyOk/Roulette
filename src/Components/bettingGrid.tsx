@@ -16,7 +16,7 @@ let BettingGrid = () => {
                     return <g key={index}>
                         <g>
                             <rect className={colorOfsquereCell} width={squareCellWidth} x={coordX} y={coordY}></rect>
-                            <text className="squareCellText" x={coordX + 18} y={coordY + 30}>{++index}</text>
+                            <text className="squareCellText" x={coordX + 25} y={coordY + 30}>{++index}</text>
                         </g>
                     </g>
                 })}
@@ -34,7 +34,7 @@ let BettingGrid = () => {
                     return <g key={index}>
                         <g>
                             <rect className={`bottomCell${index} bottomCell`} width={bottomCellWidth} x={coordX} y={coordY}></rect>
-                            <text className="bottomCellText" x={coordX + 27} y={coordY + 18}>{bottomCellsText[index]}</text>
+                            <text className="bottomCellText" x={coordX + 50} y={coordY + 18}>{bottomCellsText[index]}</text>
                         </g>
                     </g>
                 })}
