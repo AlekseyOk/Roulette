@@ -1,4 +1,4 @@
-import { greedHeight, numberOfDozensCells, oneCellWidth } from '../variables'
+import { greedHeight, numberOfDozensCells, squereCellWidth } from '../variables'
 
 let coordinatesOfDozensCells: Array<coordinatesOfDozensCell> = []
 type coordinatesOfDozensCell = Array<number>
@@ -9,7 +9,7 @@ function generateDozensCellsCoordinates(): void {
   let currentCoordinatesOfDozenCell: Array<number> = coordinatesOfFirstDozenCell
   for (let i = 1; i < numberOfDozensCells; i++) {
     let [coordinateX, coordinateY] = currentCoordinatesOfDozenCell
-    currentCoordinatesOfDozenCell = [coordinateX + (4 * oneCellWidth), coordinateY]
+    currentCoordinatesOfDozenCell = [coordinateX + (4 * squereCellWidth), coordinateY]
     coordinatesOfDozensCells.push(currentCoordinatesOfDozenCell)
   }
 }

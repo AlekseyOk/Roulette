@@ -1,9 +1,9 @@
 import React from 'react';
+import './bettingGrid.scss';
 import coordinatesOfSquareCells from '../Сalculations/squereCellsCoordinates'
 import coordinatesOfDozensCells from '../Сalculations/dozensCellsCoordinates'
 import coordinatesOfBottomCells from '../Сalculations/bottomСellsCoordinates'
-import './bettingGrid.scss';
-import { redSquareCeels, dozensText, bottomCellsText, bottomCellWidth } from '../variables'
+import { redSquareCeels, dozensText, bottomCellsText, bottomCellWidth, dozenCellWidth, squareCellWidth } from '../variables'
 
 let BettingGrid = () => {
     return (
@@ -15,7 +15,7 @@ let BettingGrid = () => {
                     redSquareCeels.includes(index) ? colorOfsquereCell = 'redSquereCell' : colorOfsquereCell = 'blackSquereCell'
                     return <g key={index}>
                         <g>
-                            <rect className={colorOfsquereCell} x={coordX} y={coordY}></rect>
+                            <rect className={colorOfsquereCell} width={squareCellWidth} x={coordX} y={coordY}></rect>
                             <text className="squareCellText" x={coordX + 18} y={coordY + 30}>{++index}</text>
                         </g>
                     </g>
@@ -24,7 +24,7 @@ let BettingGrid = () => {
                     let [coordX, coordY] = dozensCellCoordinates
                     return <g key={index}>
                         <g>
-                            <rect className='dozenCell' x={coordX} y={coordY}></rect>
+                            <rect className='dozenCell' width={dozenCellWidth} x={coordX} y={coordY}></rect>
                             <text className="dozenCellText" x={coordX + 78} y={coordY + 18}>{dozensText[index]}</text>
                         </g>
                     </g>
