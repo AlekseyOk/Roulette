@@ -8,7 +8,7 @@ import { redSquareCeels, dozensText, bottomCellsText, bottomCellWidth, dozenCell
 let BettingGrid = () => {
     return (
         <div>
-            <svg className="BettingGrid">
+            <svg className="bettingGrid">
                 {coordinatesOfSquareCells.map((squareCellCoordinates: Array<number>, index: number) => {
                     let [coordX, coordY] = squareCellCoordinates
                     let colorOfsquereCell: string = ''
@@ -25,7 +25,7 @@ let BettingGrid = () => {
                     return <g key={index}>
                         <g>
                             <rect className='dozenCell' width={dozenCellWidth} x={coordX} y={coordY}></rect>
-                            <text className="dozenCellText" x={coordX + 78} y={coordY + 18}>{dozensText[index]}</text>
+                            <text className="dozenCellText" x={coordX + 100} y={coordY + 18}>{dozensText[index]}</text>
                         </g>
                     </g>
                 })}

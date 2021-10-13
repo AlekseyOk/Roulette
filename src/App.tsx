@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="bettingGrid">
-        <BettingGrid/>
+        <BettingGrid />
       </div>
     </div>
   );

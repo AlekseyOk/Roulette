@@ -1,4 +1,4 @@
-.BettingGrid {
+.bettingGrid {
     border: 1px solid black;
     width: 600px;
     height: 200px;
@@ -9,10 +9,12 @@
     cursor: pointer;
     stroke-width: 1;
 }
-%cellHover-shared{
+
+%cellHover-shared {
     fill: steelblue;
     opacity: 90%;
 }
+
 .redSquereCell {
     @extend %cell-shared;
     fill: red;
@@ -54,12 +56,12 @@
     pointer-events: none;
     cursor: none;
     font-size: 15px;
+    text-anchor: middle;
 }
 
 .squareCellText {
     @extend %cellText-shared;
     stroke-width: 0.5;
-    text-anchor:middle;
     font-weight: bold;
 }
 
@@ -71,11 +73,9 @@
 .bottomCellText {
     @extend %cellText-shared;
     padding-top: 50px;
-    text-anchor:middle;
 }
 
 .bottomCell2 {
     @extend %cell-shared;
     fill: red;
-    height: 25px;
 }
