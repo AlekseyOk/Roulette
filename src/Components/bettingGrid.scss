@@ -4,89 +4,78 @@
     height: 200px;
 }
 
-.redSquereCell {
-    fill: red;
+%cell-shared {
     stroke: yellow;
     cursor: pointer;
     stroke-width: 1;
+}
+%cellHover-shared{
+    fill: steelblue;
+    opacity: 90%;
+}
+.redSquereCell {
+    @extend %cell-shared;
+    fill: red;
     height: 50px;
+    &:hover {
+        @extend %cellHover-shared;
+    }
 }
 
 .blackSquereCell {
+    @extend %cell-shared;
     fill: black;
-    stroke: yellow;
-    cursor: pointer;
-    stroke-width: 1;
     height: 50px;
-}
-.blackSquereCell:hover,
-.redSquereCell:hover {
-    fill: steelblue;
-    opacity: 90%;
-}
-
-.squareCellText {
-    fill: white;
-    pointer-events: none;
-    cursor: none;
-    font-size: 15px;
-    font-weight: bold;
-    stroke-width: 0.5;
-    padding-top: 50px;
-    text-anchor:middle;
-}
-.squareCellText:hover {
-    pointer-events: none;
-    cursor: none;
+    &:hover {
+        @extend %cellHover-shared;
+    }
 }
 
 .dozenCell {
+    @extend %cell-shared;
     fill: black;
-    stroke: yellow;
-    cursor: pointer;
-    stroke-width: 1;
     height: 25px;
-}
-
-.dozenCell:hover {
-    fill: steelblue;
-    opacity: 90%;
-}
-
-.dozenCellText {
-    fill: white;
-    pointer-events: none;
-    cursor: none;
-    font-size: 15px;
-    padding-top: 50px;
+    &:hover {
+        @extend %cellHover-shared;
+    }
 }
 
 .bottomCell {
-    fill: black;
-    stroke: yellow;
+    @extend %cell-shared;
     cursor: pointer;
-    stroke-width: 1;
     height: 25px;
+    &:hover {
+        @extend %cellHover-shared;
+    }
 }
 
-.bottomCellText {
+%cellText-shared {
     fill: white;
     pointer-events: none;
     cursor: none;
     font-size: 15px;
+}
+
+.squareCellText {
+    @extend %cellText-shared;
+    stroke-width: 0.5;
+    text-anchor:middle;
+    font-weight: bold;
+}
+
+.dozenCellText {
+    @extend %cellText-shared;
+    padding-top: 50px;
+}
+
+.bottomCellText {
+    @extend %cellText-shared;
     padding-top: 50px;
     text-anchor:middle;
 }
 
 .bottomCell2 {
+    @extend %cell-shared;
     fill: red;
-    stroke: yellow;
-    cursor: pointer;
-    stroke-width: 1;
     height: 25px;
-}
-
-.bottomCell:hover {
-    fill: steelblue;
-    opacity: 90%;
 }
