@@ -1,126 +1,117 @@
-.bettingGrid {
+.betting-grid {
   border: 1px solid black;
   width: 600px;
   height: 200px;
 }
 
-.squareCell, .dozenCell, .bottomCell, .bottomCell2 {
+.square-cell, .dozen-cell, .bottom-cell {
   stroke: yellow;
   cursor: pointer;
   stroke-width: 1;
 }
 
-.squareCell:hover, .dozenCell:hover, .bottomCell:hover {
+.square-cell:hover, .dozen-cell:hover, .bottom-cell:hover {
   fill: steelblue;
   opacity: 90%;
 }
 
-.squareCell {
+.square-cell {
   height: 50px;
 }
 
-.dozenCell {
+.dozen-cell {
   height: 25px;
 }
 
-.bottomCell {
+.bottom-cell {
   cursor: pointer;
   height: 25px;
 }
 
-.squareCellText, .dozenCellText, .bottomCellText {
+.cell-text {
   fill: white;
   pointer-events: none;
   font-size: 15px;
   text-anchor: middle;
 }
 
-.squareCellText {
+.cell-text {
   stroke-width: 0.5;
-  font-weight: bold;
 }
 
-.dozenCellText {
-  padding-top: 50px;
-}
-
-.bottomCellText {
-  padding-top: 50px;
-}
-
-.bottomCell2 {
+.grid-cell:nth-child(1) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(1) {
+.grid-cell:nth-child(3) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(3) {
+.grid-cell:nth-child(5) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(5) {
+.grid-cell:nth-child(7) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(7) {
+.grid-cell:nth-child(9) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(9) {
+.grid-cell:nth-child(12) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(12) {
+.grid-cell:nth-child(14) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(14) {
+.grid-cell:nth-child(16) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(16) {
+.grid-cell:nth-child(18) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(18) {
+.grid-cell:nth-child(19) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(19) {
+.grid-cell:nth-child(21) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(21) {
+.grid-cell:nth-child(23) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(23) {
+.grid-cell:nth-child(25) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(25) {
+.grid-cell:nth-child(27) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(27) {
+.grid-cell:nth-child(30) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(30) {
+.grid-cell:nth-child(32) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(32) {
+.grid-cell:nth-child(34) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(34) {
+.grid-cell:nth-child(36) {
   fill: red;
 }
 
-.squareCellsGrid:nth-child(36) {
+.grid-cell:nth-child(42) {
   fill: red;
 }
 /*# sourceMappingURL=bettingGrid.css.map */

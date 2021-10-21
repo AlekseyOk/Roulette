@@ -1,28 +1,28 @@
-import { greedHeight, numberOfSquareCells, numberOfSquereCellsRows, coordinatesOfFirstSquareCell, squereCellWidth } from '../variables'
+import { GreedHeight, NumberOfSquareCells, NumberOfSquereCellsRows, CoordinatesOfFirstSquareCell, SquereCellWidth } from '../variables'
 
 const coordinatesOfSquareCells: Array<coordinatesOfSquareCell> = []
 type coordinatesOfSquareCell = Array<number>
-let currentCoordinatesOfSquareCell: Array<number> = coordinatesOfFirstSquareCell
+let currentCoordinatesOfSquareCell: Array<number> = CoordinatesOfFirstSquareCell
 let currentnumberOfSquereCellsRows: number = 0;
 
 function addCoordinatesOfFirstSquareCell() {
-  coordinatesOfSquareCells.push(coordinatesOfFirstSquareCell)
-  currentCoordinatesOfSquareCell = coordinatesOfFirstSquareCell
+  coordinatesOfSquareCells.push(CoordinatesOfFirstSquareCell)
+  currentCoordinatesOfSquareCell = CoordinatesOfFirstSquareCell
   currentnumberOfSquereCellsRows++
 }
 
 function generateSquareCellsCoordinates() {
   addCoordinatesOfFirstSquareCell()
-  for (let i = 1; i < numberOfSquareCells; i++) {
+  for (let i = 1; i < NumberOfSquareCells; i++) {
     let [currentCoordinateX, currentCoordinateY] = currentCoordinatesOfSquareCell
-    if (currentnumberOfSquereCellsRows < numberOfSquereCellsRows) {
-      let coordinatesOfNextCell = [currentCoordinateX, currentCoordinateY - squereCellWidth]
+    if (currentnumberOfSquereCellsRows < NumberOfSquereCellsRows) {
+      let coordinatesOfNextCell = [currentCoordinateX, currentCoordinateY - SquereCellWidth]
       coordinatesOfSquareCells.push(coordinatesOfNextCell)
       currentCoordinatesOfSquareCell = coordinatesOfNextCell
       currentnumberOfSquereCellsRows++
     }
-    if (currentnumberOfSquereCellsRows >= numberOfSquereCellsRows) {
-      currentCoordinatesOfSquareCell = [currentCoordinateX + squereCellWidth, greedHeight]
+    if (currentnumberOfSquereCellsRows >= NumberOfSquereCellsRows) {
+      currentCoordinatesOfSquareCell = [currentCoordinateX + SquereCellWidth, GreedHeight]
       currentnumberOfSquereCellsRows = 0
     }
   }

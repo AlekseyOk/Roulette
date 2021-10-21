@@ -1,14 +1,13 @@
-export const greedWidth = 600
-export const greedHeight = 150
-export const numberOfSquareCells = 36
-export const numberOfSquereCellsRows = 3
-export const coordinatesOfFirstSquareCell = [0, 100]
-export const squereCellWidth = greedWidth / 12
-export let numberOfDozensCells = 3
-export let redSquareCeels = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36].map(el => el - 1)
-export let dozensText = ['1st 12', '2nd 12', '3nd 12']
-export let bottomCellsText = ['1 to 18', 'EVEN', '', '', 'ODD', '19 to 36']
-export let numberOfBottomCells = 6
-export let squareCellWidth = greedWidth / (numberOfSquareCells / numberOfSquereCellsRows)
-export let dozenCellWidth = greedWidth / numberOfDozensCells
-export let bottomCellWidth = greedWidth / numberOfBottomCells
+export const GreedWidth = 600
+export const GreedHeight = 150
+export const NumberOfSquareCells = 36
+export const NumberOfSquereCellsRows = 3
+export const CoordinatesOfFirstSquareCell = [0, 100]
+export const SquereCellWidth = GreedWidth / 12
+export let NumberOfDozensCells = 3
+export let DozensText = ['1st 12', '2nd 12', '3nd 12']
+export let BottomCellsText = ['1 to 18', 'EVEN', '', '', 'ODD', '19 to 36']
+export let NumberOfBottomCells = 6
+export let SquareCellWidth = GreedWidth / (NumberOfSquareCells / NumberOfSquereCellsRows)
+export let DozenCellWidth = GreedWidth / NumberOfDozensCells
+export let BottomCellWidth = GreedWidth / NumberOfBottomCells
