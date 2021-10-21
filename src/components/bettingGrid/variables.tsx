@@ -1,0 +1,13 @@
+export const GridWidth = 600
+export const GridHeight = 150
+export const NumberOfSquareCells = 36
+export const NumberOfSquereCellsRows = 3
+export const CoordinatesOfFirstSquareCell = [0, 100]
+export const SquereCellWidth = GridWidth / 12
+export const NumberOfDozensCells = 3
+export const DozensText = ['1st 12', '2nd 12', '3nd 12']
+export const BottomCellsText = ['1 to 18', 'EVEN', '', '', 'ODD', '19 to 36']
+export const NumberOfBottomCells = 6
+export const SquareCellWidth = GridWidth / (NumberOfSquareCells / NumberOfSquereCellsRows)
+export const DozenCellWidth = GridWidth / NumberOfDozensCells
+export const BottomCellWidth = GridWidth / NumberOfBottomCells
