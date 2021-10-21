@@ -5,13 +5,13 @@ type coordinatesOfSquareCell = Array<number>
 let currentCoordinatesOfSquareCell: Array<number> = coordinatesOfFirstSquareCell
 let currentnumberOfSquereCellsRows: number = 0;
 
-function addCoordinatesOfFirstSquareCell(): void {
+function addCoordinatesOfFirstSquareCell() {
   coordinatesOfSquareCells.push(coordinatesOfFirstSquareCell)
   currentCoordinatesOfSquareCell = coordinatesOfFirstSquareCell
   currentnumberOfSquereCellsRows++
 }
 
-function generateSquareCellsCoordinates(): void {
+function generateSquareCellsCoordinates() {
   addCoordinatesOfFirstSquareCell()
   for (let i = 1; i < numberOfSquareCells; i++) {
     let [currentCoordinateX, currentCoordinateY] = currentCoordinatesOfSquareCell

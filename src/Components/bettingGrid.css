@@ -1,0 +1,126 @@
+.bettingGrid {
+  border: 1px solid black;
+  width: 600px;
+  height: 200px;
+}
+
+.squareCell, .dozenCell, .bottomCell, .bottomCell2 {
+  stroke: yellow;
+  cursor: pointer;
+  stroke-width: 1;
+}
+
+.squareCell:hover, .dozenCell:hover, .bottomCell:hover {
+  fill: steelblue;
+  opacity: 90%;
+}
+
+.squareCell {
+  height: 50px;
+}
+
+.dozenCell {
+  height: 25px;
+}
+
+.bottomCell {
+  cursor: pointer;
+  height: 25px;
+}
+
+.squareCellText, .dozenCellText, .bottomCellText {
+  fill: white;
+  pointer-events: none;
+  font-size: 15px;
+  text-anchor: middle;
+}
+
+.squareCellText {
+  stroke-width: 0.5;
+  font-weight: bold;
+}
+
+.dozenCellText {
+  padding-top: 50px;
+}
+
+.bottomCellText {
+  padding-top: 50px;
+}
+
+.bottomCell2 {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(1) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(3) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(5) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(7) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(9) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(12) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(14) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(16) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(18) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(19) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(21) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(23) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(25) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(27) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(30) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(32) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(34) {
+  fill: red;
+}
+
+.squareCellsGrid:nth-child(36) {
+  fill: red;
+}
+/*# sourceMappingURL=bettingGrid.css.map */

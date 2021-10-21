@@ -15,18 +15,8 @@
     opacity: 90%;
 }
 
-.redSquereCell {
+.squareCell {
     @extend %cell-shared;
-    fill: red;
-    height: 50px;
-    &:hover {
-        @extend %cellHover-shared;
-    }
-}
-
-.blackSquereCell {
-    @extend %cell-shared;
-    fill: black;
     height: 50px;
     &:hover {
         @extend %cellHover-shared;
@@ -35,8 +25,9 @@
 
 .dozenCell {
     @extend %cell-shared;
-    fill: black;
+    
     height: 25px;
+
     &:hover {
         @extend %cellHover-shared;
     }
@@ -54,7 +45,6 @@
 %cellText-shared {
     fill: white;
     pointer-events: none;
-    cursor: none;
     font-size: 15px;
     text-anchor: middle;
 }
@@ -78,4 +68,12 @@
 .bottomCell2 {
     @extend %cell-shared;
     fill: red;
+}
+
+$colorList: "1", "3", "5", "7", "9", "12", "14", "16", "18", "19", "21", "23", "25", "27", "30", "32", "34", "36";
+
+@for $i from 1 through length($colorList) {
+    .squareCellsGrid:nth-child(#{nth($colorList, $i)}) {
+        fill: red;
+    }
 }

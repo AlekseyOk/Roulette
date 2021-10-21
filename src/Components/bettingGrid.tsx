@@ -9,18 +9,16 @@ let BettingGrid = () => {
     return (
         <div>
             <svg className="bettingGrid">
-                {coordinatesOfSquareCells.map((squareCellCoordinates: Array<number>, index: number) => {
+                {coordinatesOfSquareCells.map((squareCellCoordinates, index) => {
                     let [coordX, coordY] = squareCellCoordinates
-                    let colorOfsquereCell: string = ''
-                    redSquareCeels.includes(index) ? colorOfsquereCell = 'redSquereCell' : colorOfsquereCell = 'blackSquereCell'
-                    return <g key={index}>
+                    return <g key={index} className="squareCellsGrid">
                         <g>
-                            <rect className={colorOfsquereCell} width={squareCellWidth} x={coordX} y={coordY}></rect>
+                            <rect className={`squareCell`} width={squareCellWidth} x={coordX} y={coordY}></rect>
                             <text className="squareCellText" x={coordX + 25} y={coordY + 30}>{++index}</text>
                         </g>
                     </g>
                 })}
-                {coordinatesOfDozensCells.map((dozensCellCoordinates: Array<number>, index: number) => {
+                {coordinatesOfDozensCells.map((dozensCellCoordinates, index) => {
                     let [coordX, coordY] = dozensCellCoordinates
                     return <g key={index}>
                         <g>
@@ -29,7 +27,7 @@ let BettingGrid = () => {
                         </g>
                     </g>
                 })}
-                {coordinatesOfBottomCells.map((bottomCellCoordinates: Array<number>, index: number) => {
+                {coordinatesOfBottomCells.map((bottomCellCoordinates, index) => {
                     let [coordX, coordY] = bottomCellCoordinates
                     return <g key={index}>
                         <g>
