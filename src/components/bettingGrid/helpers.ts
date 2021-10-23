@@ -1,10 +1,10 @@
-import { NumberOfBottomCells, SquereCellWidth, GridHeight, NumberOfDozensCells, NumberOfSquareCells, NumberOfSquereCellsRows, CoordinatesOfFirstSquareCell} from './variables'
+import { NumberOfBottomCells, SquereCellWidth, GridHeight, NumberOfDozensCells, NumberOfSquareCells, NumberOfSquereCellsRows, CoordinatesOfFirstSquareCell} from './constans'
 
 export const coordinatesOfBottomCells: Array<coordinatesOfBottomCell> = []
 type coordinatesOfBottomCell = Array<number>
 const coordinatesOfFirstBottomCell: Array<number> = [0, SquereCellWidth * 3.5]
 
-function generateBottomCellsCoordinates(): void {
+function generateBottomCellsCoordinates() {
   coordinatesOfBottomCells.push(coordinatesOfFirstBottomCell)
   let currentCoordinatesOfBottomCell: Array<number> = coordinatesOfFirstBottomCell
   for (let i = 1; i < NumberOfBottomCells; i++) {
@@ -20,7 +20,7 @@ export const coordinatesOfDozensCells: Array<coordinatesOfDozensCell> = []
 type coordinatesOfDozensCell = Array<number>
 const coordinatesOfFirstDozenCell: Array<number> = [0, GridHeight]
 
-function generateDozensCellsCoordinates(): void {
+function generateDozensCellsCoordinates() {
   coordinatesOfDozensCells.push(coordinatesOfFirstDozenCell)
   let currentCoordinatesOfDozenCell: Array<number> = coordinatesOfFirstDozenCell
   for (let i = 1; i < NumberOfDozensCells; i++) {
@@ -34,7 +34,7 @@ generateDozensCellsCoordinates();
 export const coordinatesOfSquareCells: Array<coordinatesOfSquareCell> = []
 type coordinatesOfSquareCell = Array<number>
 let currentCoordinatesOfSquareCell: Array<number> = CoordinatesOfFirstSquareCell
-let currentnumberOfSquereCellsRows: number = 0;
+let currentnumberOfSquereCellsRows = 0;
 
 function addCoordinatesOfFirstSquareCell() {
   coordinatesOfSquareCells.push(CoordinatesOfFirstSquareCell)

@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import { coordinatesOfBottomCells, coordinatesOfDozensCells, coordinatesOfSquareCells } from './helpers'
-import { DozensText, BottomCellsText, BottomCellWidth, DozenCellWidth, SquareCellWidth } from './variables'
+import { DozensText, BottomCellsText, BottomCellWidth, DozenCellWidth, SquareCellWidth } from './constans'
 
 let BettingGrid = () => {
     return (
