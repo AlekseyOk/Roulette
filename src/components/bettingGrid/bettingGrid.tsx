@@ -1,36 +1,34 @@
 import React from 'react';
 import './styles.scss';
-import { coordinatesOfBottomCells, coordinatesOfDozensCells, coordinatesOfSquareCells } from './helpers'
-import { DozensText, BottomCellsText, BottomCellWidth, DozenCellWidth, SquareCellWidth } from './constans'
+import { coordsOfBottomCells, coordinatesOfDozensCells, coordsOfStraights, BottomCellWidth, DozenCellWidth, StraightWidth } from './helpers'
+import { DozensText, BottomCellsText } from './constans'
 
 let BettingGrid = () => {
     return (
         <div>
             <svg className="betting-grid">
-                {coordinatesOfSquareCells.map((coords, idx) => {
-                    let [coordX, coordY] = coords
+                {coordsOfStraights.map((coords, idx) => {
+                    let [x, y] = coords
                     return <g key={idx} className="grid-cell">
-                        <g>
-                            <rect className="square-cell" width={SquareCellWidth} x={coordX} y={coordY}></rect>
-                            <text className="cell-text" x={coordX + 25} y={coordY + 30}>{++idx}</text>
-                        </g>
+                        <rect className="square-cell" width={StraightWidth} height={StraightWidth} x={x} y={y}></rect>
+                        <text className="cell-text" x={x} y={y}>{++idx}</text>
                     </g>
                 })}
                 {coordinatesOfDozensCells.map((coords, idx) => {
-                    let [coordX, coordY] = coords
+                    let [x, y] = coords
                     return <g key={idx} className="grid-cell">
                         <g>
-                            <rect className='dozen-cell' width={DozenCellWidth} x={coordX} y={coordY}></rect>
-                            <text className="cell-text" x={coordX + 100} y={coordY + 18}>{DozensText[idx]}</text>
+                            <rect className='dozen-cell' width={DozenCellWidth} x={x} y={y}></rect>
+                            <text className="cell-text" x={x + 100} y={y + 18}>{DozensText[idx]}</text>
                         </g>
                     </g>
                 })}
-                {coordinatesOfBottomCells.map((coords, idx) => {
-                    let [coordX, coordY] = coords
+                {coordsOfBottomCells.map((coords, idx) => {
+                    let [x, y] = coords
                     return <g key={idx} className="grid-cell">
                         <g>
-                            <rect className="bottom-cell" width={BottomCellWidth} x={coordX} y={coordY}></rect>
-                            <text className="cell-text" x={coordX + 50} y={coordY + 18}>{BottomCellsText[idx]}</text>
+                            <rect className="bottom-cell" width={BottomCellWidth} x={x} y={y}></rect>
+                            <text className="cell-text" x={x + 50} y={y + 18}>{BottomCellsText[idx]}</text>
                         </g>
                     </g>
                 })}
