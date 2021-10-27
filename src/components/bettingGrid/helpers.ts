@@ -1,40 +1,42 @@
-import { BottomCells, GridHeight, Dozens, Straights, StraightsRows, GridWidth, ColumnWidth, ZeroWidth} from './constans'
+import { BottomCells, GridHeight, Dozens, Straights, StraightsRows, GridWidth, ColumnPortion, ZeroPortion, GridPortion, StraightYPortion } from './constans'
 
-export const StraightWidth = GridWidth / (ZeroWidth + (Straights/StraightsRows) + ColumnWidth)
-export const DozenCellWidth = GridWidth / Dozens
+export const DozenPortion = (GridPortion - (3 * StraightYPortion )) / 2 
+export const BottomCellPortion = 0.25
+export const StraightWidth = GridWidth / (ZeroPortion + (Straights / StraightsRows) + ColumnPortion)
+export const StraightHeight = GridHeight * ((GridPortion - DozenPortion - BottomCellPortion) / StraightsRows)
+export const DozenWidth = GridWidth / (ZeroPortion + Dozens + ColumnPortion)
+export const DozenHeight = GridHeight * DozenPortion
 export const BottomCellWidth = GridWidth / BottomCells
-export const CoordsOfFirstStraight = [0, (2*StraightWidth)]
+export const firstStraightCoords = [0, (2 * StraightHeight)]
 export const coordsOfBottomCells: Array<coordsOfBottomCell> = []
-type coordsOfBottomCell = Array<number>
-const coordsOfFirstBottomCell = [0, StraightWidth * 3.5]
-
-export const coordinatesOfDozensCells: Array<coordinatesOfDozensCell> = []
-type coordinatesOfDozensCell = Array<number>
-const coordinatesOfFirstDozenCell = [0, GridHeight]
-
+const firstBottomCellCoords = [0, StraightHeight * (StraightsRows + DozenPortion + BottomCellPortion)]
+export const dozensCoords: Array<dozensCoords> = []
+const firstDozenCoords = [0, 3 * StraightHeight]
 export const coordsOfStraights: Array<coordsOfStraights> = []
-type coordsOfStraights = Array<number>
-let currentCoordsOfStraights: Array<number> = CoordsOfFirstStraight
+let currentStraightCoords: Array<number> = firstStraightCoords
 let currentStraightsRows = 0;
+type coordsOfStraights = Array<number>
+type coordsOfBottomCell = Array<number>
+type dozensCoords = Array<number>
 
-function addCoordsOfFirstStraight() {
-  coordsOfStraights.push(CoordsOfFirstStraight)
-  currentCoordsOfStraights = CoordsOfFirstStraight
+function addfirstStraightCoords() {
+  coordsOfStraights.push(firstStraightCoords)
+  currentStraightCoords = firstStraightCoords
   currentStraightsRows++
 }
 
 function generateStraightsCoords() {
-  addCoordsOfFirstStraight()
+  addfirstStraightCoords()
   for (let i = 1; i < Straights; i++) {
-    let [x, y] = currentCoordsOfStraights
+    let [x, y] = currentStraightCoords
     if (currentStraightsRows < StraightsRows) {
-      let coordinatesOfNextCell = [x, y - StraightWidth]
-      coordsOfStraights.push(coordinatesOfNextCell)
-      currentCoordsOfStraights = coordinatesOfNextCell
+      let nextCoords = [x, y - StraightHeight]
+      coordsOfStraights.push(nextCoords)
+      currentStraightCoords = nextCoords
       currentStraightsRows++
     }
     if (currentStraightsRows >= StraightsRows) {
-      currentCoordsOfStraights = [x + StraightWidth, 3*StraightWidth]
+      currentStraightCoords = [x + StraightWidth, StraightsRows * StraightHeight]
       currentStraightsRows = 0
     }
   }
@@ -42,24 +44,24 @@ function generateStraightsCoords() {
 
 generateStraightsCoords()
 
-function generateDozensCellsCoordinates() {
-  coordinatesOfDozensCells.push(coordinatesOfFirstDozenCell)
-  let currentCoordinatesOfDozenCell = coordinatesOfFirstDozenCell
+function generateDozensCoords() {
+  dozensCoords.push(firstDozenCoords)
+  let dozenCurrentCoords = firstDozenCoords
   for (let i = 1; i < Dozens; i++) {
-    let [coordinateX, coordinateY] = currentCoordinatesOfDozenCell
-    currentCoordinatesOfDozenCell = [coordinateX + (4 * StraightWidth), coordinateY]
-    coordinatesOfDozensCells.push(currentCoordinatesOfDozenCell)
+    let [x, y] = dozenCurrentCoords
+    dozenCurrentCoords = [x + (4 * StraightWidth), y]
+    dozensCoords.push(dozenCurrentCoords)
   }
 }
-generateDozensCellsCoordinates();
+generateDozensCoords();
 
-function generateBottomCellsCoords() {
-  coordsOfBottomCells.push(coordsOfFirstBottomCell)
-  let currentcoordsOfBottomCell = coordsOfFirstBottomCell
-  for (let i = 1; i < BottomCells; i++) {
-    let [coordinateX, coordinateY] = currentcoordsOfBottomCell
-    currentcoordsOfBottomCell = [coordinateX + (2 * StraightWidth), coordinateY]
-    coordsOfBottomCells.push(currentcoordsOfBottomCell)
-  }
-}
-generateBottomCellsCoords();
+// function generateBottomCellsCoords() {
+//   coordsOfBottomCells.push(firstBottomCellCoords)
+//   let bottomCellCurrentCoords = firstBottomCellCoords
+//   for (let i = 1; i < BottomCells; i++) {
+//     let [x, y] = bottomCellCurrentCoords
+//     bottomCellCurrentCoords = [x + (2 * StraightWidth), y]
+//     coordsOfBottomCells.push(bottomCellCurrentCoords)
+//   }
+// }
+// generateBottomCellsCoords();

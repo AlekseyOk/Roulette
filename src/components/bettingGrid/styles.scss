@@ -24,8 +24,6 @@
 
 .dozen-cell {
     @extend %cell-shared;
-    
-    height: 25px;
 
     &:hover {
         @extend %cellHover-shared;

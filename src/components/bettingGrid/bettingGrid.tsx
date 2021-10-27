@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import { coordsOfBottomCells, coordinatesOfDozensCells, coordsOfStraights, BottomCellWidth, DozenCellWidth, StraightWidth } from './helpers'
+import { coordsOfBottomCells, dozensCoords, coordsOfStraights, BottomCellWidth, DozenWidth, StraightWidth, StraightHeight, DozenHeight } from './helpers'
 import { DozensText, BottomCellsText } from './constans'
 
 let BettingGrid = () => {
@@ -10,16 +10,16 @@ let BettingGrid = () => {
                 {coordsOfStraights.map((coords, idx) => {
                     let [x, y] = coords
                     return <g key={idx} className="grid-cell">
-                        <rect className="square-cell" width={StraightWidth} height={StraightWidth} x={x} y={y}></rect>
-                        <text className="cell-text" x={x} y={y}>{++idx}</text>
+                        <rect className="square-cell" width={StraightWidth} height={StraightHeight} x={x} y={y}></rect>
+                        <text className="cell-text" x={x+StraightWidth/2} y={y+StraightHeight/2}>{++idx}</text>
                     </g>
                 })}
-                {coordinatesOfDozensCells.map((coords, idx) => {
+                {dozensCoords.map((coords, idx) => {
                     let [x, y] = coords
                     return <g key={idx} className="grid-cell">
                         <g>
-                            <rect className='dozen-cell' width={DozenCellWidth} x={x} y={y}></rect>
-                            <text className="cell-text" x={x + 100} y={y + 18}>{DozensText[idx]}</text>
+                            <rect className='dozen-cell' width={DozenWidth} height={DozenHeight} x={x} y={y}></rect>
+                            <text className="cell-text" x={x+DozenWidth/2} y={y+DozenHeight/2}>{DozensText[idx]}</text>
                         </g>
                     </g>
                 })}
