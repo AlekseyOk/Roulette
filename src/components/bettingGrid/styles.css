@@ -4,28 +4,19 @@
   height: 200px;
 }
 
-.square-cell, .dozen-cell, .bottom-cell {
+.straight, .dozen-cell, .bottom-cell {
   stroke: yellow;
   cursor: pointer;
   stroke-width: 1;
 }
 
-.square-cell:hover, .dozen-cell:hover, .bottom-cell:hover {
+.straight:hover, .dozen-cell:hover, .bottom-cell:hover {
   fill: steelblue;
   opacity: 90%;
 }
 
-.square-cell {
-  height: 50px;
-}
-
-.dozen-cell {
-  height: 25px;
-}
-
 .bottom-cell {
   cursor: pointer;
-  height: 25px;
 }
 
 .cell-text {

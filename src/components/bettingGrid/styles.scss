@@ -1,7 +1,7 @@
 .betting-grid {
     border: 1px solid black;
-    width: 600px;
-    height: 200px;
+    width: 500px;
+    height: 150px;
 }
 
 %cell-shared {
@@ -15,8 +15,9 @@
     opacity: 90%;
 }
 
-.square-cell {
+.straight {
     @extend %cell-shared;
+
     &:hover {
         @extend %cellHover-shared;
     }
@@ -32,11 +33,23 @@
 
 .bottom-cell {
     @extend %cell-shared;
-    cursor: pointer;
-    height: 25px;
     &:hover {
         @extend %cellHover-shared;
     }
+}
+
+.column-cell{
+    @extend %cell-shared;
+    &:hover {
+        @extend %cellHover-shared;
+    }
+}
+.zero-cell{
+    @extend %cell-shared;
+    &:hover {
+        @extend %cellHover-shared;
+    }
+    fill: green;
 }
 
 .cell-text {

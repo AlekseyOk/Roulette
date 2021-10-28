@@ -1,26 +1,33 @@
-import { BottomCells, GridHeight, Dozens, Straights, StraightsRows, GridWidth, ColumnPortion, ZeroPortion, GridPortion, StraightYPortion } from './constans'
+import { BottomCells, GridHeight, Dozens, Straights, StraightsRows, GridWidth, ColumnXportion, ZeroXportion, GridXYportion, StraightYPortion, Columns } from './constans'
 
-export const DozenPortion = (GridPortion - (3 * StraightYPortion )) / 2 
-export const BottomCellPortion = 0.25
-export const StraightWidth = GridWidth / (ZeroPortion + (Straights / StraightsRows) + ColumnPortion)
-export const StraightHeight = GridHeight * ((GridPortion - DozenPortion - BottomCellPortion) / StraightsRows)
-export const DozenWidth = GridWidth / (ZeroPortion + Dozens + ColumnPortion)
-export const DozenHeight = GridHeight * DozenPortion
-export const BottomCellWidth = GridWidth / BottomCells
-export const firstStraightCoords = [0, (2 * StraightHeight)]
-export const coordsOfBottomCells: Array<coordsOfBottomCell> = []
-const firstBottomCellCoords = [0, StraightHeight * (StraightsRows + DozenPortion + BottomCellPortion)]
-export const dozensCoords: Array<dozensCoords> = []
-const firstDozenCoords = [0, 3 * StraightHeight]
-export const coordsOfStraights: Array<coordsOfStraights> = []
+const DozenYportion = (GridXYportion - (3 * StraightYPortion)) / 2
+const BottomCellYportion = DozenYportion
+const BottomCellXportion = (GridXYportion - StraightYPortion * 3) / 2
+export const straightWidth = GridWidth / (ZeroXportion + (Straights / StraightsRows) + ColumnXportion)
+export const straightHeight = GridHeight * ((GridXYportion - DozenYportion - BottomCellXportion) / StraightsRows)
+export const dozenWidth = 4 * straightWidth
+export const dozenHeight = GridHeight * DozenYportion
+export const bottomCellWidth = straightWidth * 2
+export const bottomCellHeight = GridHeight * BottomCellYportion
+export const zeroWidth = straightWidth
+export const zeroHeight = 3 * straightHeight
+export const columnWidth = straightWidth / 2
+export const columnHeight = straightHeight
+const firstStraightCoords = [zeroWidth, (2 * straightHeight)]
+export const bottomCellsCoords: Array<coords> = []
+export const columnsCoords: Array<coords> = []
+const firstBottomCellCoords = [zeroWidth, 3 * straightHeight + dozenHeight]
+export const dozensCoords: Array<coords> = []
+const firstDozenCoords = [zeroWidth, 3 * straightHeight]
+export const straightsCoords: Array<coords> = []
+export const firstColumnCoords = [zeroWidth + straightWidth * 12, 0]
 let currentStraightCoords: Array<number> = firstStraightCoords
 let currentStraightsRows = 0;
-type coordsOfStraights = Array<number>
-type coordsOfBottomCell = Array<number>
-type dozensCoords = Array<number>
+type coords = Array<number>
+export const zeroCoords = [[0, 0]]
 
 function addfirstStraightCoords() {
-  coordsOfStraights.push(firstStraightCoords)
+  straightsCoords.push(firstStraightCoords)
   currentStraightCoords = firstStraightCoords
   currentStraightsRows++
 }
@@ -30,13 +37,13 @@ function generateStraightsCoords() {
   for (let i = 1; i < Straights; i++) {
     let [x, y] = currentStraightCoords
     if (currentStraightsRows < StraightsRows) {
-      let nextCoords = [x, y - StraightHeight]
-      coordsOfStraights.push(nextCoords)
+      let nextCoords = [x, y - straightHeight]
+      straightsCoords.push(nextCoords)
       currentStraightCoords = nextCoords
       currentStraightsRows++
     }
     if (currentStraightsRows >= StraightsRows) {
-      currentStraightCoords = [x + StraightWidth, StraightsRows * StraightHeight]
+      currentStraightCoords = [x + straightWidth, StraightsRows * straightHeight]
       currentStraightsRows = 0
     }
   }
@@ -49,19 +56,30 @@ function generateDozensCoords() {
   let dozenCurrentCoords = firstDozenCoords
   for (let i = 1; i < Dozens; i++) {
     let [x, y] = dozenCurrentCoords
-    dozenCurrentCoords = [x + (4 * StraightWidth), y]
+    dozenCurrentCoords = [x + (4 * straightWidth), y]
     dozensCoords.push(dozenCurrentCoords)
   }
 }
 generateDozensCoords();
 
-// function generateBottomCellsCoords() {
-//   coordsOfBottomCells.push(firstBottomCellCoords)
-//   let bottomCellCurrentCoords = firstBottomCellCoords
-//   for (let i = 1; i < BottomCells; i++) {
-//     let [x, y] = bottomCellCurrentCoords
-//     bottomCellCurrentCoords = [x + (2 * StraightWidth), y]
-//     coordsOfBottomCells.push(bottomCellCurrentCoords)
-//   }
-// }
-// generateBottomCellsCoords();
+function generateBottomCellsCoords() {
+  bottomCellsCoords.push(firstBottomCellCoords)
+  let bottomCellCurrentCoords = firstBottomCellCoords
+  for (let i = 1; i < BottomCells; i++) {
+    let [x, y] = bottomCellCurrentCoords
+    bottomCellCurrentCoords = [x + (2 * straightWidth), y]
+    bottomCellsCoords.push(bottomCellCurrentCoords)
+  }
+}
+generateBottomCellsCoords();
+
+function generateColumnsCoords() {
+  columnsCoords.push(firstColumnCoords)
+  let columnCurrentCoords = firstColumnCoords
+  for (let i = 1; i < Columns; i++) {
+    let [x, y] = columnCurrentCoords
+    columnCurrentCoords = [x, y + columnHeight]
+    columnsCoords.push(columnCurrentCoords)
+  }
+}
+generateColumnsCoords();
