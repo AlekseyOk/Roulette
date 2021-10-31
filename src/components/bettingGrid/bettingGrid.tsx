@@ -46,7 +46,7 @@ let BettingGrid = () => {
                     return <g key={idx} className="grid-cell">
                         <g>
                             <rect className="column-cell" width={columnWidth} height={columnHeight} x={x} y={y}></rect>
-                            <text className="cell-text" x={x+bottomCellWidth/2} y={y+bottomCellHeight/2}>{}</text>
+                            <text className="cell-text" transform={`rotate(-90 ${x+columnWidth/2} ${y+columnHeight/2})`} x={x+columnWidth/2} y={y+columnHeight/2}>2to1</text>
                         </g>
                     </g>
                 })}
