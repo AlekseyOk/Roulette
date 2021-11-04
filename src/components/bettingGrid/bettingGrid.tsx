@@ -1,12 +1,12 @@
 import React from 'react';
 import './styles.scss';
-import { bottomCellsCoords, dozensCoords, straightsCoords, bottomCellWidth, dozenWidth, straightWidth, straightHeight, dozenHeight, bottomCellHeight, zeroCoords, zeroHeight, zeroWidth, columnsCoords, columnWidth, columnHeight } from './helpers'
+import { bottomCellsCoords, dozensCoords, straightsCoords, bottomCellWidth, dozenWidth, straightWidth, straightHeight, dozenHeight, bottomCellHeight, zeroCoords, zeroHeight, zeroWidth, columnsCoords, columnWidth, columnHeight, zeroPath } from './helpers'
 import { DozensText, BottomCellsText } from './constans'
 
 let BettingGrid = () => {
     return (
         <div>
-            <svg className="betting-grid">
+            <svg className="betting-grid" >
                 {straightsCoords.map((coords, idx) => {
                     let [x, y] = coords
                     return <g key={idx} className="grid-cell">
@@ -36,7 +36,7 @@ let BettingGrid = () => {
                     let [x, y] = coords
                     return <g key={idx} className="grid-cell">
                         <g>
-                            <rect className="zero-cell" width={zeroWidth} height={zeroHeight} x={x} y={y}></rect>
+                            <path className="zero-cell" d={zeroPath} x={x} y={y}></path>
                             <text className="cell-text" x={x+zeroWidth/2} y={y+zeroHeight/2}>0</text>
                         </g>
                     </g>
@@ -51,6 +51,9 @@ let BettingGrid = () => {
                     </g>
                 })}
             </svg>
+            <svg width="440" height="440">
+  <path d="M100,100 h200 a20,20 0 0 1 20,20 v200 a20,20 0 0 1 -20,20 h-200 a20,20 0 0 1 -20,-20 v-200 a20,20 0 0 1 20,-20 z" fill="none" stroke="black" stroke-width="3" />
+</svg>
         </div>
     )
 }
