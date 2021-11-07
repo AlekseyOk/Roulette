@@ -88,7 +88,12 @@ const zeroCords:Array<coords> = []
 zeroCords.push([zeroWidth, 0])
 zeroCords.push([zeroWidth, straightHeight*3])
 zeroCords.push([zeroWidth/1.5, straightHeight*3])
+zeroCords.push([GridHeight/10, straightHeight*3])
+zeroCords.push([zeroWidth/1.5-zeroWidth/3, straightHeight*3-GridWidth/50])
 zeroCords.push([1, straightHeight*3/2])
-zeroCords.push([zeroWidth/2, 0])
+zeroCords.push([zeroWidth/3, zeroWidth/1.5-zeroWidth/3])
+zeroCords.push([GridHeight/10, 0])
+zeroCords.push([zeroWidth/1.5, 0])
+zeroCords.push([zeroWidth, 0])
 
-export let zeroPath = `M ${zeroCords[0]} ${zeroCords[1]} ${zeroCords[2]} Q ${GridHeight/10} ${straightHeight*3} ${zeroWidth/1.5-zeroWidth/3} ${straightHeight*3-GridWidth/50} L${zeroCords[3]} ${zeroWidth/3} ${zeroWidth/1.5-zeroWidth/3} Q ${GridHeight/10} 0 ${zeroWidth/1.5} 0 L ${zeroWidth} 0`
+export let zeroPath = `M ${zeroCords[0]} ${zeroCords[1]} ${zeroCords[2]} Q ${zeroCords[3]} ${zeroCords[4]} L${zeroCords[5]} ${zeroCords[6]} Q ${zeroCords[7]} ${zeroCords[8]} L ${zeroCords[9]}`
