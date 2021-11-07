@@ -91,4 +91,4 @@ zeroCords.push([zeroWidth/1.5, straightHeight*3])
 zeroCords.push([1, straightHeight*3/2])
 zeroCords.push([zeroWidth/2, 0])
 
-export let zeroPath = `M ${zeroCords[0]} ${zeroCords[1]} ${zeroCords[2]} Q 15 ${straightHeight*3} ${zeroWidth/1.5-12} ${straightHeight*3-10} L${zeroCords[3]} 12 ${zeroWidth/1.5-12} Q 15 0 ${zeroWidth/1.5} 0 L ${zeroWidth} 0`
+export let zeroPath = `M ${zeroCords[0]} ${zeroCords[1]} ${zeroCords[2]} Q ${GridHeight/10} ${straightHeight*3} ${zeroWidth/1.5-zeroWidth/3} ${straightHeight*3-GridWidth/50} L${zeroCords[3]} ${zeroWidth/3} ${zeroWidth/1.5-zeroWidth/3} Q ${GridHeight/10} 0 ${zeroWidth/1.5} 0 L ${zeroWidth} 0`
