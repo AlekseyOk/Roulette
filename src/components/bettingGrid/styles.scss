@@ -38,13 +38,13 @@
     }
 }
 
-.column-cell{
+.column-cell {
     @extend %cell-shared;
     &:hover {
         @extend %cellHover-shared;
     }
 }
-.zero-cell{
+.zero-cell {
     @extend %cell-shared;
     &:hover {
         @extend %cellHover-shared;
@@ -60,7 +60,7 @@
 }
 
 g {
-    text-anchor: middle; 
+    text-anchor: middle;
 }
 text {
     dominant-baseline: middle;
