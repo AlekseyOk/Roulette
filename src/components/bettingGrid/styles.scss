@@ -1,13 +1,13 @@
 .betting-grid {
     border: 1px solid black;
-    width: 500px;
-    height: 150px;
+    width: 1300px;
+    height: 400px;
 }
 
 %cell-shared {
-    stroke: blue;
+    stroke: yellow;
     cursor: pointer;
-    stroke-width: 1;
+    stroke-width: 2;
 }
 
 %cellHover-shared {
@@ -56,7 +56,7 @@
     stroke-width: 0.5;
     fill: white;
     pointer-events: none;
-    font-size: 15px;
+    font-size: 30px;
 }
 
 g {

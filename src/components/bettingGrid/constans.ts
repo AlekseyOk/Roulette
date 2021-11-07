@@ -1,5 +1,5 @@
-export const GridWidth = 500
-export const GridHeight = 150
+export const GridWidth = 1300
+export const GridHeight = 400
 export const Straights = 36
 export const StraightsRows = 3
 export const Dozens = 3
@@ -8,6 +8,6 @@ export const BottomCells = 6
 export const StraightYPortion = 0.25
 export const GridXYportion = 1
 export const ColumnXportion = 0.65
-export const ZeroXportion = 1
+export const ZeroXportion = 0.7
 export const DozensText = ['1st 12', '2nd 12', '3nd 12']
 export const BottomCellsText = ['1 to 18', 'EVEN', '', '', 'ODD', '19 to 36']
