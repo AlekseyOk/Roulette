@@ -1,13 +1,9 @@
 import React from 'react';
 import './styles.scss';
-import { bottomCellsCoords, dozensCoords, straightsCoords, bottomCellWidth, dozenWidth, straightWidth, straightHeight, dozenHeight, bottomCellHeight, zeroCoords, zeroHeight, zeroWidth, columnsCoords, columnWidth, columnHeight, zeroPath } from './helpers'
+import { bottomCellsCoords, dozensCoords, straightsCoords, bottomCellWidth, dozenWidth, straightWidth, straightHeight, dozenHeight, bottomCellHeight, zeroCoords, zeroHeight, zeroWidth, columnsCoords, columnWidth, columnHeight, zeroPath, getTextCoords } from './helpers'
 import { DozensText, BottomCellsText } from './constans'
 
 let BettingGrid = () => {
-    let getTextCoords = (x: number, y: number, width: number, height: number) => {
-        let [textX, textY] = [x + width / 2, y + height / 2]
-        return [textX, textY]
-    }
     return (
         <div>
             <svg className="betting-grid" >

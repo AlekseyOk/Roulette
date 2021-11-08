@@ -96,4 +96,9 @@ zeroCords.push([zeroWidth / 2.4, 0])
 zeroCords.push([zeroWidth / 1.5, 0])
 zeroCords.push([zeroWidth, 0])
 
-export let zeroPath = `M ${zeroCords[0]} ${zeroCords[1]} ${zeroCords[2]} Q ${zeroCords[3]} ${zeroCords[4]} L ${zeroCords[5]} ${zeroCords[6]} Q ${zeroCords[7]} ${zeroCords[8]} L ${zeroCords[9]}`
+export const zeroPath = `M ${zeroCords[0]} ${zeroCords[1]} ${zeroCords[2]} Q ${zeroCords[3]} ${zeroCords[4]} L ${zeroCords[5]} ${zeroCords[6]} Q ${zeroCords[7]} ${zeroCords[8]} L ${zeroCords[9]}`
+
+export const getTextCoords = (x: number, y: number, width: number, height: number) => {
+  let [textX, textY] = [x + width / 2, y + height / 2]
+  return [textX, textY]
+}
