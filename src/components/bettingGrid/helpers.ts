@@ -1,32 +1,17 @@
-import { BottomCells, Dozens, Straights, StraightsRows, ColumnXportion, ZeroXportion, GridXYportion, StraightYPortion, Columns } from './constans'
+import { BottomCells, Dozens, Straights, StraightsRows, Columns, bottomCellsCoords, columnsCoords, dozensCoords, firstColumnCoords, straightsCoords, straightWidth, zeroWidth, BottomCellXportion, dozenHeight, DozenYportion, GridHeight, GridXYportion } from './constans'
 
-export const GridWidth:any = '1000'
-export const GridHeight:any = '300'
-const DozenYportion = (GridXYportion - (3 * StraightYPortion)) / 2
-const BottomCellYportion = DozenYportion
-const BottomCellXportion = (GridXYportion - StraightYPortion * 3) / 2
-export const straightWidth = GridWidth / (ZeroXportion + (Straights / StraightsRows) + ColumnXportion)
+
+
+type coords = Array<number>
+let currentStraightsRows = 0
+
 export const straightHeight = GridHeight * ((GridXYportion - DozenYportion - BottomCellXportion) / StraightsRows)
-export const dozenWidth = 4 * straightWidth
-export const dozenHeight = GridHeight * DozenYportion
-export const bottomCellWidth = straightWidth * 2
-export const bottomCellHeight = GridHeight * BottomCellYportion
-export const zeroWidth = straightWidth * ZeroXportion
 export const zeroHeight = 3 * straightHeight
-export const columnWidth = ColumnXportion * straightWidth
 export const columnHeight = straightHeight
 const firstStraightCoords = [zeroWidth, (2 * straightHeight)]
-export const bottomCellsCoords: Array<coords> = []
-export const columnsCoords: Array<coords> = []
 const firstBottomCellCoords = [zeroWidth, 3 * straightHeight + dozenHeight]
-export const dozensCoords: Array<coords> = []
-const firstDozenCoords = [zeroWidth, 3 * straightHeight]
-export const straightsCoords: Array<coords> = []
-export const firstColumnCoords = [zeroWidth + straightWidth * 12, 0]
 let currentStraightCoords: Array<number> = firstStraightCoords
-let currentStraightsRows = 0;
-type coords = Array<number>
-export const zeroCoords = [[0, 0]]
+const firstDozenCoords = [zeroWidth, 3 * straightHeight]
 
 function addfirstStraightCoords() {
   straightsCoords.push(firstStraightCoords)

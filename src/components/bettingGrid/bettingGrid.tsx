@@ -1,8 +1,8 @@
 import React from 'react';
 import useResizeObserver from "use-resize-observer";
 import './styles.scss';
-import { bottomCellsCoords, dozensCoords, straightsCoords, bottomCellWidth, dozenWidth, straightWidth, straightHeight, dozenHeight, bottomCellHeight, zeroCoords, zeroHeight, zeroWidth, columnsCoords, columnWidth, columnHeight, zeroPath, getTextCoords } from './helpers'
-import { DozensText, BottomCellsText } from './constans'
+import { getTextCoords, zeroPath, straightHeight, zeroHeight, columnHeight} from './helpers'
+import { DozensText, BottomCellsText, bottomCellHeight, bottomCellsCoords, bottomCellWidth, columnsCoords, columnWidth, dozenHeight, dozensCoords, dozenWidth, straightsCoords, straightWidth, zeroCoords, zeroWidth } from './constans'
 
 const BettingGrid = () => {
     const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>()
