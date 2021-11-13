@@ -8,19 +8,16 @@ let currentStraightsRows = 0
 export const straightHeight = GridHeight * ((GridXYportion - DozenYportion - BottomCellXportion) / StraightsRows)
 export const zeroHeight = 3 * straightHeight
 export const columnHeight = straightHeight
-const firstStraightCoords = [zeroWidth, (2 * straightHeight)]
 const firstBottomCellCoords = [zeroWidth, 3 * straightHeight + dozenHeight]
-let currentStraightCoords: Array<number> = firstStraightCoords
 const firstDozenCoords = [zeroWidth, 3 * straightHeight]
 
-function addfirstStraightCoords() {
+function generateStraightsCoords() {
+
+const firstStraightCoords = [zeroWidth, (2 * straightHeight)]
+let currentStraightCoords: Array<number> = firstStraightCoords
   straightsCoords.push(firstStraightCoords)
   currentStraightCoords = firstStraightCoords
   currentStraightsRows++
-}
-
-function generateStraightsCoords() {
-  addfirstStraightCoords()
   for (let i = 1; i < Straights; i++) {
     let [x, y] = currentStraightCoords
     if (currentStraightsRows < StraightsRows) {
