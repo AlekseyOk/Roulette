@@ -1,5 +1,5 @@
-export const GridWidth = 1300
-export const GridHeight = 400
+// export let GridWidth = 1300
+// export let GridHeight = 400
 export const Straights = 36
 export const StraightsRows = 3
 export const Dozens = 3

@@ -1,12 +1,16 @@
 import React from 'react';
+import useResizeObserver from "use-resize-observer";
 import './styles.scss';
 import { bottomCellsCoords, dozensCoords, straightsCoords, bottomCellWidth, dozenWidth, straightWidth, straightHeight, dozenHeight, bottomCellHeight, zeroCoords, zeroHeight, zeroWidth, columnsCoords, columnWidth, columnHeight, zeroPath, getTextCoords } from './helpers'
 import { DozensText, BottomCellsText } from './constans'
 
-let BettingGrid = () => {
+const BettingGrid = () => {
+    const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>()
+
     return (
-        <div>
-            <svg className="betting-grid" >
+        <div className="betting-grid-container" ref={ref}>
+            Size: {width}x{height}
+            <svg className="betting-grid" width={width} height={height} >
                 {straightsCoords.map((coords, idx) => {
                     let [x, y] = coords
                     let [textX, textY] = getTextCoords(x, y, straightWidth, straightHeight)
@@ -60,4 +64,5 @@ let BettingGrid = () => {
         </div>
     )
 }
+
 export default BettingGrid
